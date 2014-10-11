@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "September 26"
+date:   2014-09-26 22:17:02
+categories: julia
+---
+There's been some very exciting changes in Julia 0.4-dev this week.  Some highlights:
+
+
+# Core infrastructure
+
+* Staged functions! [#7311](https://github.com/JuliaLang/julia/issues/7311) These powerful function generators are somewhat like macros, only they operate on *types* instead of syntax.  Whereas macros just give you the symbols of the arguments, staged functions run at a slightly later stage in the compilation process where you can get the types of the arguments.  See Jeff's writeup from when he [proposed them two years ago on the mailing list](https://groups.google.com/forum/#!searchin/julia-dev/staged$20functions/julia-dev/eSbNplQpTXQ/WMIUIRhBrxcJ).  These are required for [@Keno](http://github.com/Keno)'s [Cxx.jl](https://github.com/Keno/Cxx.jl) package, and I see it as a very important stepping stone towards bigger and better features (including Keno's debugger!).  There's still an open discussion about the naming, perhaps changing it to something like `type function`.
+
+* Meta expressions and `@inline` [#8297](https://github.com/JuliaLang/julia/issues/8297).  Force methods to always be inlined with `@inline function foo() = …`.  This feature is now nicely documented in the new [talking to the compiler](http://docs.julialang.org/en/latest/devdocs/meta/) chapter.  I think this can eventually be extended to call site inlining, too, but that hasn't been implemented yet.
+
+* A new parametric `Nullable{T}` type [#8152](https://github.com/JuliaLang/julia/pull/8152).  The nullable type is a specialized container that can have zero or one objects.  See the [new documentation in the Representing Missingness chapter](http://docs.julialang.org/en/latest/manual/nullable-types/).  I believe the long-term plan will be to migrate DataArrays to using these types for their missingness, allowing for more performant, type-stable code (currently, many DataArray operations return something of type `Union(Something, NAType)`… which the compiler is unable to optimize).
+
+* @simd just got faster!  I don't fully understand this one, but check out [#8452](https://github.com/JuliaLang/julia/pull/8452), where Arch enabled 64-bit vectorization.
+
+
+# Interface
+
+* The REPL keymap infrastructure was overhauled, making it easier and more powerful to create custom keybindings.  See the documentation here: [Customizing keybindings](http://docs.julialang.org/en/latest/manual/interacting-with-julia/#customizing-keybindings).  You can now use Matlab-style up- and down-arrow history completions!  There are still some bugs to be ironed out, but it's looking really good.
+
+
+# Upcoming
+
+* Jeff has been working on the much desired integer promotion change — currently, `Int8(1) + Int8(2)` yields a 64 bit 3.  [#8420](https://github.com/JuliaLang/julia/pull/8420) will change it so integer arithmetic is type-preserving.  It also checks integer truncations and signed-unsigned conversions.  It's looking like it'll get merged very soon!
+
+
+# Package ecosystem
+
+* Jiahao created an automatic script to show what's been going on in the METADATA.jl repository.  See the [Google groups discussion](https://groups.google.com/forum/#!topic/julia-dev/lItAV5606ps), or simply jump to its output here: https://gist.github.com/jiahao/4795b16cbd1c556acd35
+
+
+Did I miss anything?
