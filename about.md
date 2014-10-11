@@ -4,8 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+This is a simple blog to keep track of major changes to the Julia language and ecosystem.  I've been interested in keeping up with the development of the julia master branch, but things move fast! As someone who has limited time to follow the issues and mailing lists, I think this blog has the potential to be very useful.  
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Help me keep it up to date!  See a new big breaking change get merged into master?  Add it to the running post for the next week!  I'm not sure how well this is going to work, but it's worth a shot.  Check it out at https://github.com/thisweekinjulia/thisweekinjulia.github.io

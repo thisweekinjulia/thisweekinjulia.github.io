@@ -1,25 +1,11 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to this week in Julia!"
 date:   2014-10-10 19:55:39
-categories: jekyll update
+categories: site
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve --watch`, which launches a web server and auto-regenerates your site when a file is updated.
+This is a simple blog to keep track of major changes to the [Julia language](http://julialang.org) and ecosystem.  I've been interested in keeping up with the development of the julia master branch, but things move fast! As someone who has limited time to follow the issues and mailing lists, I think this blog has the potential to be very useful.  
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+I took a first crack at doing something like this two weeks ago on [reddit](http://www.reddit.com/r/Julia/comments/2hkgne/this_week_in_julia/), but I think doing it on GitHub will make life much easier.
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
-
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+Help me keep it up to date!  See a new big breaking change get merged into master?  Add it to the running post for the next week!  I'm not sure how well this is going to work, but it's worth a shot.  Check it out on [GitHub](https://github.com/thisweekinjulia/thisweekinjulia.github.io) - pull requests very welcome!
