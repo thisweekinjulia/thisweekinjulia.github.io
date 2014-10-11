@@ -22,7 +22,7 @@ There is so much new in the past two weeks!  In the future, I'll try to keep it 
   it generalizes to other types of containers, it is easier to guess how to
   specify key and value types, and the syntaxes for empty and pre-populated
   dicts are synchronized. As part of this change, `=>` is parsed as a normal
-  operator, and `Base` defines it to construct `Pair` objects ([#6739](https://github.com/JuliaLang/julia/pull/6739)).
+  operator, and `Base` defines it to construct `Pair` objects ([#8521](https://github.com/JuliaLang/julia/pull/8521)).
 * The any-typed array literal syntax `{1,2,3}` has also been deprecated. Taken together with the 
   dict syntax change above, this means that curly braces will soon be available 
   for an awesomer new syntax construct! [#8578](https://github.com/JuliaLang/julia/pull/8578)
