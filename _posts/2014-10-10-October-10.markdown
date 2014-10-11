@@ -1,0 +1,43 @@
+There is so much new in the past two weeks!  In the future, I'll try to keep it to one-week posts, but I think all the major changes since my first shot at this [on reddit](http://www.reddit.com/r/Julia/comments/2hkgne/this_week_in_julia/) deserve mention.
+
+# Major breaking changes
+
+* Integer arithmetic is now type-preserving 
+  [#8420](https://github.com/JuliaLang/julia/pull/8420)! Additionally,  
+  integer conversions (e.g., calling `uint8(1234)`) will now error if the  
+  argument doesn't fit in the new type.  The current way to properly truncate  
+  an integer to a smaller type is via `itrunc(Uint8, 1234)`, but that may be 
+  changing very soon ([#8646](https://github.com/JuliaLang/julia/issues/8646)).
+  Similarly, `uint(-1)` is also now an error.
+* The `Dict` literal syntax `[a=>b,c=>d]` has been deprecated and is replaced
+  with `Dict(a=>b,c=>d)`.  `{a=>b}` is replaced with `Dict{Any,Any}(a=>b)`.
+  `(K=>V)[...]` is replaced with `Dict{K,V}(...)`.
+  The new syntax has many advantages: all of its components are first-class,
+  it generalizes to other types of containers, it is easier to guess how to
+  specify key and value types, and the syntaxes for empty and pre-populated
+  dicts are synchronized. As part of this change, `=>` is parsed as a normal
+  operator, and `Base` defines it to construct `Pair` objects ([#6739](https://github.com/JuliaLang/julia/pull/6739)).
+* The any-typed array literal syntax `{1,2,3}` has also been deprecated. Taken together with the 
+  dict syntax change above, this means that curly braces will soon be available 
+  for an awesomer new syntax construct! [#8578](https://github.com/JuliaLang/julia/pull/8578)
+* An empty pair of square brackets `[]` now constructs an empty `Any` array 
+  instead of an array of `None`. This means that you can now `push!` elements into `[]`. ([#8493](https://github.com/JuliaLang/julia/pull/8493))
+
+# Standard library improvements
+
+  * `deepcopy` now recurses through immutable types and makes copies of their mutable fields ([#8560](https://github.com/JuliaLang/julia/pull/8560)). In general, calling `deepcopy` on an object should generally have the same effect as serializing and then deserializing it.
+  
+# Performance improvements
+
+* The julia REPL now magically starts up in half the time! ([#8528](https://github.com/JuliaLang/julia/pull/8528))
+* Other things that got speed boosts: `gcd` ([8410](https://github.com/JuliaLang/julia/pull/8410)), RandIntGen ([8563](https://github.com/JuliaLang/julia/pull/8563)), and comparisons with BigInts and BigFloats ([#8512](https://github.com/JuliaLang/julia/pull/8512).
+
+# Upcoming changes and discussions
+
+* The documentation system got a new push, using [@one-more-minute](https://github.com/one-more-minute)'s [Markdown.jl](https://github.com/one-more-minute/Markdown.jl) and [@MichaelHatherly](https://github.com/MichaelHatherly)'s [Docile.jl](https://github.com/MichaelHatherly/Docile.jl) as a starting point. See the work-in-progress pull request at [#8588](https://github.com/JuliaLang/julia/pull/8588).
+* Call overloading, too, has seen some recent action: [#8008](https://github.com/JuliaLang/julia/pull/8008)
+
+# Package ecosystem
+
+* The [pkg.julialang.org site](http://pkg.julialang.org) now has a snazzy new [ecosystem pulse](http://pkg.julialang.org/pulse.html) page.  It shows all the recent changes in the last week, with convenient links to the new and updated packages.
+* Tucked away in an [innocent little thread about build systems](https://github.com/JuliaLang/julia/issues/8294#issuecomment-57108621) is this gem: [@nolta](https://github.com/nolta) managed to convert the amos fortran library to julia. But that's not even the coolest part... he wrote a little fortran-to-julia transpiler (in two passes, [pass0.sh](https://github.com/nolta/SpecialFunctions.jl/blob/master/src/amos/pass0.sh) and [pass1.jl](https://github.com/nolta/SpecialFunctions.jl/blob/master/src/amos/pass1.jl) to get the job done. And, amazingly, it is within 1.1x of the original fortran speed. Just goes to show how powerful `@goto` can really be!
