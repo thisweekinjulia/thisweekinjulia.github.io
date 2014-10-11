@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Welcome to this week in Julia!"
+title:  "October 10"
 date:   2014-10-10 19:55:39
-categories: site
+categories: julia
 ---
 There is so much new in the past two weeks!  In the future, I'll try to keep it to one-week posts, but I think all the major changes since my first shot at this [on reddit](http://www.reddit.com/r/Julia/comments/2hkgne/this_week_in_julia/) deserve mention.
 
