@@ -36,7 +36,7 @@ There is so much new in the past two weeks!  In the future, I'll try to keep it 
 # Performance improvements
 
 * The julia REPL now magically starts up in half the time! ([#8528](https://github.com/JuliaLang/julia/pull/8528))
-* Other things that got speed boosts: `gcd` ([8410](https://github.com/JuliaLang/julia/pull/8410)), RandIntGen ([#8563](https://github.com/JuliaLang/julia/pull/8563)), and comparisons with BigInts and BigFloats ([#8512](https://github.com/JuliaLang/julia/pull/8512)).
+* Other things that got speed boosts: `gcd` ([#8410](https://github.com/JuliaLang/julia/pull/8410)), RandIntGen ([#8563](https://github.com/JuliaLang/julia/pull/8563)), and comparisons with BigInts and BigFloats ([#8512](https://github.com/JuliaLang/julia/pull/8512)).
 
 # Upcoming changes and discussions
 
@@ -46,4 +46,4 @@ There is so much new in the past two weeks!  In the future, I'll try to keep it 
 # Package ecosystem
 
 * The [pkg.julialang.org site](http://pkg.julialang.org) now has a snazzy new [ecosystem pulse](http://pkg.julialang.org/pulse.html) page.  It shows all the recent changes in the last week, with convenient links to the new and updated packages.
-* Tucked away in an [innocent little thread about build systems](https://github.com/JuliaLang/julia/issues/8294#issuecomment-57108621) is this gem: [@nolta](https://github.com/nolta) managed to convert the amos fortran library to julia. But that's not even the coolest part... he wrote a little fortran-to-julia transpiler (in two passes, [pass0.sh](https://github.com/nolta/SpecialFunctions.jl/blob/master/src/amos/pass0.sh) and [pass1.jl](https://github.com/nolta/SpecialFunctions.jl/blob/master/src/amos/pass1.jl) to get the job done. And, amazingly, it is within 1.1x of the original fortran speed. Just goes to show how powerful `@goto` can really be!
+* Tucked away in an [innocent little thread about build systems](https://github.com/JuliaLang/julia/issues/8294#issuecomment-57108621) is this gem: [@nolta](https://github.com/nolta) managed to convert the amos fortran library to julia. But that's not even the coolest part... he wrote a little fortran-to-julia transpiler (in two passes, [pass0.sh](https://github.com/nolta/SpecialFunctions.jl/blob/master/src/amos/pass0.sh) and [pass1.jl](https://github.com/nolta/SpecialFunctions.jl/blob/master/src/amos/pass1.jl) to get the job done. And, amazingly, it is within 1.2x of the original fortran speed. Just goes to show how powerful `@goto` can really be!
