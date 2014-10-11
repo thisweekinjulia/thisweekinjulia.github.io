@@ -10,6 +10,7 @@ Things to keep an eye on:
 * Call overloading: [#8008](https://github.com/JuliaLang/julia/pull/8008)
 * Documentation system: [#8588](https://github.com/JuliaLang/julia/pull/8588)
 * Sane cat: [#8599](https://github.com/JuliaLang/julia/pull/8599)
+* `itrunc`: [#8646](https://github.com/JuliaLang/julia/issues/8646)
 
 # Major breaking changes
 
