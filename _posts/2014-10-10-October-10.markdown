@@ -36,7 +36,7 @@ There is so much new in the past two weeks!  In the future, I'll try to keep it 
 # Performance improvements
 
 * The julia REPL now magically starts up in half the time! ([#8528](https://github.com/JuliaLang/julia/pull/8528))
-* Other things that got speed boosts: `gcd` ([#8410](https://github.com/JuliaLang/julia/pull/8410)), RandIntGen ([#8563](https://github.com/JuliaLang/julia/pull/8563)), and comparisons with BigInts and BigFloats ([#8512](https://github.com/JuliaLang/julia/pull/8512)).
+* Other things that got speed boosts: `gcd` ([#8410](https://github.com/JuliaLang/julia/pull/8410)), and comparisons with BigInts and BigFloats ([#8512](https://github.com/JuliaLang/julia/pull/8512)).
 
 # Upcoming changes and discussions
 
