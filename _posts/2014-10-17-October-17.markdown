@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "October 17"
+title:  "This week in Julia: October 17"
 date:   2014-10-17 20:00:00
 categories: julia
 ---
