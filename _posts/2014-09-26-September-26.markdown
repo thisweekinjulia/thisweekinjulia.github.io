@@ -30,7 +30,7 @@ There's been some very exciting changes in Julia 0.4-dev this week.  Some highli
 
 # Package ecosystem
 
-* Jiahao created an automatic script to show what's been going on in the METADATA.jl repository.  See the [Google groups discussion](https://groups.google.com/forum/#!topic/julia-dev/lItAV5606ps), or simply jump to its output here: https://gist.github.com/jiahao/4795b16cbd1c556acd35
+* Jiahao created an automatic script to show what's been going on in the METADATA.jl repository.  See the [Google groups discussion](https://groups.google.com/forum/#!topic/julia-dev/lItAV5606ps), or simply jump to its output [here](https://gist.github.com/jiahao/4795b16cbd1c556acd35)
 
 
 Did I miss anything?
