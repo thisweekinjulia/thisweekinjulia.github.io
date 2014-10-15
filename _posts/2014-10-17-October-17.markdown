@@ -22,3 +22,5 @@ Things to keep an eye on:
 # Upcoming changes
 
 # Package ecosystem
+
+* A new compatibility package, [Compat.jl](https://groups.google.com/forum/#!searchin/julia-users/compat.jl/julia-users/Fobhly-DPNY/CzXOkJwVjN0J), was created to help package authors transition to the new syntaxes in 0.4.  See the [users list announcement](https://groups.google.com/forum/#!searchin/julia-users/compat.jl/julia-users/Fobhly-DPNY/CzXOkJwVjN0J) for more details.
