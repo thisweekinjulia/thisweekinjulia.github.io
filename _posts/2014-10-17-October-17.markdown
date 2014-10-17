@@ -4,13 +4,8 @@ title:  "This week in Julia: October 17"
 date:   2014-10-18 20:00:00
 categories: julia
 ---
-This is the current draft for next-week's post.  Add things here you find valuable.  It'll auto-post next Friday!
+This is the current draft for next-week's post.  Add things here you find valuable.  It'll auto-post... soon!
 
-Things to keep an eye on:
-* Call overloading: [#8008](https://github.com/JuliaLang/julia/pull/8008)
-* Documentation system: [#8588](https://github.com/JuliaLang/julia/pull/8588)
-* Sane cat: [#8599](https://github.com/JuliaLang/julia/pull/8599)
-* static compilation: [#8656](https://github.com/JuliaLang/julia/pull/8656)
 
 # Major breaking changes
 
