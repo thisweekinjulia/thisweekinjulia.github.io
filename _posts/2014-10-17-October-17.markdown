@@ -24,4 +24,5 @@ Things to keep an eye on:
 
 * A new compatibility package, [Compat.jl](https://groups.google.com/forum/#!searchin/julia-users/compat.jl/julia-users/Fobhly-DPNY/CzXOkJwVjN0J), was created to help package authors transition to the new syntaxes in 0.4.  See the [users list announcement](https://groups.google.com/forum/#!searchin/julia-users/compat.jl/julia-users/Fobhly-DPNY/CzXOkJwVjN0J) for more details.
 * A new package, [GeometricalPredicates.jl](https://github.com/skariel/GeometricalPredicates.jl), provides fast, robust 2D and 3D geometrical predicates on generic point types.  See the announcement on the [julia-users mailing list for more details](https://groups.google.com/d/msg/julia-users/oTxuewsKMQw/_k1f5AOJx0sJ) for more details and some snazzy images:
+
 [![Sample image](http://i.imgur.com/Gxaqbnlm.jpg)](http://i.imgur.com/Gxaqbnl.jpg)
