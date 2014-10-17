@@ -16,9 +16,12 @@ Things to keep an eye on:
 
 * As anticipated from last week's integer arithmetic change, the usage of `itrunc` to truncate integers into a specific type has been removed.  Since this is intrinsically a modular arithmetic calculation, `rem` is now the way to do this, with the idiomatic syntax being `1234 % Uint8 == 0xd2`.  ([#8648](https://github.com/JuliaLang/julia/pull/8648))
 
-# Performance improvements
+# New proposals
 
-# Upcoming changes
+Several new proposals were submitted this week.  TODO: flush these out a bit more.
+
+* Convert syntax: `x as Foo` ([#8710](https://github.com/JuliaLang/julia/issues/8710))
+* Indexing and transpose behaviors: [4774](https://github.com/JuliaLang/julia/issues/4774#issuecomment-59422003)
 
 # Package ecosystem
 
