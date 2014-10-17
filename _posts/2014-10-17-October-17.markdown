@@ -10,12 +10,11 @@ Things to keep an eye on:
 * Call overloading: [#8008](https://github.com/JuliaLang/julia/pull/8008)
 * Documentation system: [#8588](https://github.com/JuliaLang/julia/pull/8588)
 * Sane cat: [#8599](https://github.com/JuliaLang/julia/pull/8599)
-* `itrunc`: [#8646](https://github.com/JuliaLang/julia/issues/8646)
 * static compilation: [#8656](https://github.com/JuliaLang/julia/pull/8656)
 
 # Major breaking changes
 
-# Standard library improvements
+* As anticipated from last week's integer arithmetic change, the usage of `itrunc` to truncate integers into a specific type has been removed.  Since this is intrinsically a modular arithmetic calculation, `rem` is now the way to do this, with the idiomatic syntax being `1234 % Uint8 == 0xd2`.  ([#8648](https://github.com/JuliaLang/julia/pull/8648))
 
 # Performance improvements
 
