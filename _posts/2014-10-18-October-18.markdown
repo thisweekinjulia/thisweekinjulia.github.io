@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "This week in Julia: October 17"
+title:  "This week in Julia: October 18"
 date:   2014-10-18 20:00:00
 categories: julia
 ---
@@ -13,10 +13,14 @@ This is the current draft for next-week's post.  Add things here you find valuab
 
 # New proposals
 
-Several new proposals were submitted this week.  TODO: flush these out a bit more.
+Several new proposals (juleps) were submitted this week.
 
-* Convert syntax: `x as Foo` ([#8710](https://github.com/JuliaLang/julia/issues/8710))
-* Indexing and transpose behaviors: [4774](https://github.com/JuliaLang/julia/issues/4774#issuecomment-59422003)
+* Given that `convert` is one of the most heavily used functions in Julia, a renewed conversation about using `x as Foo` as sugar for `convert(Foo, x)::Foo` was started in [#8710](https://github.com/JuliaLang/julia/issues/8710).  
+* @StefanKarpinski put together a coherent story for how APL-style indexing and lazy transpose behaviors could be combined to solve some of the current inconsistencies (like the double-transpose of a vector not being a vector, and vector dot products being one-element arrays). [#4774](https://github.com/JuliaLang/julia/issues/4774#issuecomment-59422003)
+
+# 0.4 project updates
+
+* @JeffBezanson managed to get the call-overload branch passing tests!  A few questions remain before it can get merged, though.  [#8712](https://github.com/JuliaLang/julia/pull/8712).
 
 # Package ecosystem
 
