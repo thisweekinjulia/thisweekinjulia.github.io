@@ -21,6 +21,7 @@ Several new proposals (juleps) were submitted this week.
 # 0.4 project updates
 
 * @JeffBezanson managed to get the call-overload branch passing tests!  A few questions remain before it can get merged, though.  [#8712](https://github.com/JuliaLang/julia/pull/8712).
+* And a postscript from last week.  An intrepid group has managed to successfully build the REPL with MSVC.  I missed including it last week, but I think it's worthy of a note.  See [#7761](https://github.com/JuliaLang/julia/pull/7761) for details.
 
 # Package ecosystem
 
