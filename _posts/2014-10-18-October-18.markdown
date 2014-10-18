@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "This week in Julia: October 18"
-date:   2014-10-18 20:00:00
+date:   2014-10-18 13:29:00
 categories: julia
 ---
 This is the current draft for next-week's post.  Add things here you find valuable.  It'll auto-post... soon!
