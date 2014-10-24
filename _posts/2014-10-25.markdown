@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "This week in Julia: October 25"
+date:   2014-10-25 23:59:00
+categories: julia
+---
+
+The maintenence release Julia 0.3.2 was posted on Wednesday.  A total of  total of [70 commits](https://github.com/JuliaLang/julia/compare/c03f413...8227746)  were meticulously backported from the master development branch, bringing lots of bugfixes, documentation updates, and even a few performance improvements to the 0.3 release.  
+
+# Major breaking changes on 0.4
+
+The function call operator is now overloadable ([#8712](https://github.com/JuliaLang/julia/pull/8712))!  This has lots of wide-ranging implications... some of which I'm sure haven't even been realized yet.  Here's what it already means:
+
+* It makes type constructors first class methods of the `call` function.  You can still create constructor methods with the old function-like `T(x,y,z) = ...;` syntax, or you can add methods to `call` directly (e.g., `call(::Type{A},x,y,z) = ...;`).  While I'm not familiar with the internals, it apparently simplifies a lot of the code surrounding type constructor generation.  This "big new feature" resulted in a net *decrease* of 10 lines of code.  Impressive!
+* There's now a fallback method (by default) for *all* types such that calling `T(args...)` means `convert(T, args...)::T` ([39dfd92](https://github.com/JuliaLang/julia/commit/39dfd9282baf4b0402001149ce759c2db6c660cc)).  This means that you can now call `Int(2.0)` with the leading capital!
+* This is paving the way towards possibly deprecating the lowercase `int` functions ([#1470: int, Int and box](https://github.com/JuliaLang/julia/issues/1470)).  One question is what to do with its elementwise methods (e.g., `int([1.0,2.0,3.0])` to convert an Array{Float64} to an Array{Int}), but with one small optimization ([2cb98a0](https://github.com/JuliaLang/julia/commit/2cb98a08cfa5c61ce5bb56c4a560a9b749dda186)), `map(Int,[1.0,2.0,3.0])` is now just as fast as the old lowercase method.  This is an interesting case; typically `map` is slow since it cannot specialize on the function value, but when called with a type it can emit specialized code for that constructor.
+* This same trick is exploited in lots of the map/reduce code, using dummy Functor types to represent specific functions to allow method specialization and inlining.  But with call overloading, those 'dummy' Functor types just got a lot smarter. Instead of using a secondary helper function to actually evaluate each function, you can overload the call operator for each Functor directly so the type behaves just like its desired function.  It makes the Base reduction code a little bit simpler and much nicer to read. ([#8790](https://github.com/JuliaLang/julia/pull/8790))
+* It also obviates the need for some functions like `inf` and `nan`, which are now deprecated.  Previously, you would call `inf(T)` to get the representation of infinity in type `T`.  With this change, however, you can simply type the reverse: `T(Inf)`. ([#8776](https://github.com/JuliaLang/julia/pull/8776))
+
+I'm sure lots of this is still in flux, but this turned out to be a bigger and more exciting change than I expected.  It has also [broken lots of packages](https://groups.google.com/d/msg/julia-users/F0cJ2KOkXfQ/efWVr_OzptkJ) (although that may just be the result of a few dependencies breaking and cascading through the ecosystem), so in the short term beware.
+
+# Other 0.4 project updates
+
+* Static compile parts 3 ([#8656](https://github.com/JuliaLang/julia/pull/8656)) and 4 ([#8745](https://github.com/JuliaLang/julia/pull/8745)).
+* Documentation system keeps marching along, now in a new PR ([#8791](https://github.com/JuliaLang/julia/pull/8791))
+
+# Package ecosystem
+
