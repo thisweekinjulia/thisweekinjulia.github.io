@@ -26,3 +26,4 @@ I'm sure lots of this is still in flux, but this turned out to be a bigger and m
 
 # Package ecosystem
 
+* A few weeks ago, Tim Holy proposed an alternative to multiple inheritance that has since become known as the "Tim Holy Traits Trick" (THTT) ([comment on #2345](https://github.com/JuliaLang/julia/issues/2345#issuecomment-54537633)). In short, it uses functions to dispatch on traits instead of using an inheritance tree to dispatch on ancestors. At its core, though, it allows for multiple *interfaces*. Mauro Werder took this idea and ran, putting together the [Traits.jl package](https://github.com/mauro3/Traits.jl) to use macros to formalize interface definition, implementation, and dispatch. I think it's all very clever. 
